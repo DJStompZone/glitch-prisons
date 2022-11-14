@@ -1,7 +1,76 @@
 <html><head>
-  <link rel="stylesheet" href="style.css">
   </head><body>
+  <style>
+  @keyframes anm {
+  from{
+    transform: matrix(1, -0.2, 0, 1.001, 0, 0) rotate(0);
+    filter: saturate(1.1415) hue-rotate(-180deg) contrast(1.5) brightness(0.91);
     
+  }
+
+  to {
+    transform: translatex(18vw) matrix(0.911, 0, -0.3, 0.855, -1, -0.1) rotate(10deg);
+    filter: saturate(1.415) hue-rotate(180deg) contrast(2) brightness(1.21);
+  }
+}
+@keyframes anm2 {
+0% {
+    transform: matrix(1,0, 0, 1, 0, 0);
+    filter: none;
+}
+100% {
+    transform: matrix(0.0009, 0.001, 0.0207, 1.00002, 0, 0.005);
+    filter: saturate(1.415) hue-rotate(160deg) contrast(2) brightness(1.21);
+}
+}
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  transition: 700ms;
+  stroke: black;
+  /* stroke-width: 0; */
+  stroke-miterlimit: 1;
+  stroke-linecap: butt;
+  stroke-width: 0.02px;
+  paint-order: fill;
+  stroke-linejoin: bevel;
+  shape-rendering: geometricprecision;
+  vector-effect: non-scaling-stroke;
+}
+html {
+  background-image: url("https://i.imgur.com/ousbVYf.png");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+svg {
+  width: 60vw;
+  height: -webkit-fill-available;
+  animation: 14s anm infinite alternate ease-in-out;
+  animation-fill-mode: backwards;
+  transform: translatey(10vh);
+}
+
+#path2 {
+  border-block-style: solid;
+  /* border: 2px solid black; */
+  /* mix-blend-mode: screen; */
+  shape-rendering: geometricprecision;
+  
+}
+
+path {
+  animation: 8s anm2 infinite alternate ease-in-out 7s;
+}
+
+  </style>
 <svg style="transform: translatey(10vh)" id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="165.99999999999997" viewbox="0, 0, 400,165.99999999999997"><g id="svgg" style="
     opacity: 0.65;
     filter: blur(0px) sepia(0.3);
